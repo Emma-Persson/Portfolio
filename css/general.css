@@ -1,0 +1,291 @@
+:root {
+  --color-bg: #f87a9f;
+  --color-pink: #f64476;
+  --color-gul: #faf9b9;
+}
+body {
+  background-color: var(--color-bg);
+  color: var(--color-gul);
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url(../fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto light";
+  src: url(../fonts/Roboto/static/Roboto-Light.ttf);
+  font-style: light;
+}
+@font-face {
+  font-family: "Roboto bold";
+  src: url(../fonts/Roboto/static/Roboto-Bold.ttf);
+  font-style: bold;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto/static/Roboto_Condensed-Regular.ttf);
+  font-style: normal;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url(../fonts/Playfair_Display/static/PlayfairDisplay-MediumItalic.ttf);
+  font-style: italic;
+}
+h1 {
+  font-family: "Bebas Neue";
+  font-weight: 600;
+  font-size: 200px;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+h2 {
+  font-family: "Roboto bold";
+  font-weight: 700;
+  font-size: 30px;
+}
+h5 {
+  font-family: "Roboto bold";
+  font-weight: 700;
+  font-size: 20px;
+}
+h3 {
+  font-family: "Roboto light";
+  padding: 0 0 0 2em;
+  margin: 0;
+}
+h4 {
+  font-family: "Playfair Display";
+  font-size: 15px;
+  padding: 0 0 0 5em;
+  margin: 0;
+}
+
+p {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 20px;
+  margin: 0.2em;
+}
+
+main {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  row-gap: 1rem;
+}
+/* nav header */
+.navtop {
+  display: flex;
+  list-style: none;
+  gap: 2em;
+}
+header nav a {
+  text-decoration: none;
+  color: var(--color-gul);
+  font-family: "Roboto";
+}
+.navli {
+  display: flex;
+  list-style: none;
+  gap: 2em;
+  margin-left: auto;
+}
+
+/* burger */
+.burger {
+  width: 40px;
+  height: 30px;
+  display: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.burger .line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+@media screen and (max-width: 800px) {
+  .navli {
+    display: none;
+  }
+  .burger {
+    display: block;
+    background-color: transparent;
+    border: 0;
+    flex: 0 0 auto;
+    margin: 0 20px;
+  }
+  .burger .line {
+    background-color: var(--color-gul);
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
+  nav.active .navli {
+    display: block;
+    background-color: var(--color-bg);
+    position: absolute;
+    top: 3.6rem;
+    right: 0;
+    width: clamp(200px, 50vw, 400px);
+    z-index: 1;
+    opacity: 0.8;
+  }
+  header > nav li > a:after {
+    content: "";
+  }
+  nav.active .navli li {
+    margin: 40px 20px;
+    text-align: right;
+  }
+  nav.active .navli a {
+    font-size: 24px;
+  }
+  .burger {
+    display: block;
+    margin-top: 1em;
+  }
+  .navtop {
+    justify-content: space-between;
+  }
+  h1 {
+    font-size: 75px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+}
+/* img {
+  max-width: 100%;
+  height: auto;
+} */
+
+.ep {
+  height: 550px;
+  width: auto;
+  margin: 2.5em 0 0 2em;
+  padding: 0;
+}
+/* kanp */
+button {
+  border: 1px solid var(--color-gul);
+  background-color: var(--color-gul);
+  color: var(--color-pink);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  width: 90%;
+}
+button:hover {
+  filter: drop-shadow(0 0 0.75rem var(--color-pink));
+}
+.button-pink1 {
+  border: 1px solid var(--color-pink);
+  background-color: var(--color-pink);
+  color: var(--color-gul);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+  }
+  .grid_1-1-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 3em;
+    position: relative;
+    padding-bottom: 16rem;
+  }
+  .billedetekst {
+    position: absolute;
+    top: 13em;
+  }
+  .billedetekst h2 {
+    font-size: 37px;
+    margin: 0;
+    padding: 0;
+  }
+}
+.billede1,
+.billede2,
+.billede4 {
+  width: 240px;
+  height: 160px;
+  object-fit: cover;
+  margin-top: 5em;
+}
+.billede3 {
+  width: 160px;
+  height: 230px;
+  object-fit: cover;
+  margin-top: 5em;
+}
+
+@media screen and (max-width: 800px) {
+  button {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    margin-bottom: 2em;
+  }
+  .button-pink1 {
+    background-color: transparent;
+    color: transparent;
+  }
+  .button-pink2 {
+    background-color: var(--color-pink);
+    color: var(--color-gul);
+    border: var(--color-pink);
+  }
+  .button-gul {
+    background-color: var(--color-gul);
+    color: var(--color-pink);
+    border: var(--color-gul);
+  }
+}
+.cta {
+  padding: 10px;
+  background-color: var(--color-pink);
+  color: var(--color-gul);
+  border-radius: 20px;
+  padding-left: 1em;
+  padding-right: 1em;
+  border: 2px solid var(--color-pink);
+  width: 50%;
+  font-size: large;
+  margin: 0 auto;
+  margin-bottom: 5em;
+}
+.cta a {
+  text-decoration: none;
+  color: var(--color-gul);
+  text-align: center;
+  align-items: center;
+  font-family: "Roboto Bold";
+}
+.hotspot {
+  margin: 3em 0;
+}
