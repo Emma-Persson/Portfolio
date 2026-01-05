@@ -68,7 +68,6 @@ p {
   font-family: "Roboto";
   font-weight: 300;
   font-size: 20px;
-  margin: 0.2em;
 }
 
 main {
@@ -79,6 +78,7 @@ main {
   display: grid;
   row-gap: 1rem;
 }
+
 /* nav header */
 .navtop {
   display: flex;
@@ -113,7 +113,20 @@ header nav a {
   margin-bottom: 5px;
   transition: 0.2s linear;
 }
+.ep {
+  height: 550px;
+  width: auto;
+  margin: 2.5em 0 0 2em;
+  padding: 0;
+}
 @media screen and (max-width: 800px) {
+  body {
+  }
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .navli {
     display: none;
   }
@@ -172,18 +185,26 @@ header nav a {
   h2 {
     font-size: 15px;
   }
+  .grid_1-1-mobil {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    justify-items: center;
+  }
+  /* .billede3 {
+    rotate: 90deg;
+    position: static;
+    } */
+  .grid_1-1-mobil img {
+    width: 100%;
+    max-width: 160px;
+    height: 160px;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+  }
 }
-/* img {
-  max-width: 100%;
-  height: auto;
-} */
 
-.ep {
-  height: 550px;
-  width: auto;
-  margin: 2.5em 0 0 2em;
-  padding: 0;
-}
 /* kanp */
 button {
   border: 1px solid var(--color-gul);
@@ -215,13 +236,13 @@ button:hover {
   .grid_1-1-1-1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 3em;
+    gap: 7em;
     position: relative;
     padding-bottom: 16rem;
   }
   .billedetekst {
     position: absolute;
-    top: 13em;
+    top: 60em;
   }
   .billedetekst h2 {
     font-size: 37px;
@@ -246,7 +267,6 @@ button:hover {
 
 @media screen and (max-width: 800px) {
   button {
-    display: block;
     margin: 0 auto;
     width: 80%;
     margin-bottom: 2em;
@@ -288,4 +308,38 @@ button:hover {
 }
 .hotspot {
   margin: 3em 0;
+}
+.billedetekst a {
+  text-decoration: none;
+  color: var(--color-gul);
+  cursor: pointer;
+}
+nav {
+  padding: 0 0.5em 0 0.5em;
+}
+@media screen and (max-width: 800px) {
+  main {
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+  }
+  .ep {
+    height: auto;
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    padding-bottom: 1em;
+  }
+  p {
+    text-align: left;
+    justify-self: stretch;
+  }
+  .cta {
+    width: 50%;
+    margin: 2em auto;
+    text-align: center;
+    justify-self: center;
+  }
 }
