@@ -190,6 +190,8 @@ header nav a {
     grid-template-columns: 1fr 1fr;
     gap: 2em;
     justify-items: center;
+    padding-bottom: 8rem;
+    padding-top: 2em;
   }
   /* .billede3 {
     rotate: 90deg;
@@ -239,15 +241,6 @@ button:hover {
     gap: 7em;
     position: relative;
     padding-bottom: 16rem;
-  }
-  .billedetekst {
-    position: absolute;
-    top: 60em;
-  }
-  .billedetekst h2 {
-    font-size: 37px;
-    margin: 0;
-    padding: 0;
   }
 }
 .billede1,
@@ -309,6 +302,11 @@ button:hover {
 .hotspot {
   margin: 3em 0;
 }
+.billedetekst {
+  position: absolute;
+  top: 15.7em;
+  font-size: 60px;
+}
 .billedetekst a {
   text-decoration: none;
   color: var(--color-gul);
@@ -332,7 +330,8 @@ nav {
     display: block;
     padding-bottom: 1em;
   }
-  p {
+  p,
+  .billedetekst {
     text-align: left;
     justify-self: stretch;
   }
@@ -341,5 +340,67 @@ nav {
     margin: 2em auto;
     text-align: center;
     justify-self: center;
+  }
+  .billedetekst {
+    position: absolute;
+    top: 18em;
+    font-size: 60px;
+  }
+}
+
+.grid_1-1-gap0 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4em;
+  margin-top: 1em;
+}
+
+#popup4 h2,
+#popup3 h2,
+#popup2 h2,
+#popup1 h2 {
+  text-align: center;
+}
+#popup4,
+#popup3,
+#popup2,
+#popup1 {
+  background-color: var(--color-pink);
+  color: var(--color-gul);
+  margin: auto;
+}
+[popover] {
+  padding: 1rem;
+  margin: auto;
+  max-height: 80vh;
+  max-width: 150ch;
+  width: 80vw;
+
+  button {
+    position: sticky;
+    top: 0;
+    justify-self: end;
+  }
+
+  &:popover-open {
+    display: grid;
+  }
+
+  &::backdrop {
+    background: #0008;
+  }
+}
+[popover] {
+  opacity: 0;
+  transition: 0.5s allow-discrete;
+  translate: 0 -5rem;
+}
+
+:popover-open {
+  opacity: 1;
+  translate: none;
+  @starting-style {
+    opacity: 0;
+    translate: 0 5rem;
   }
 }
