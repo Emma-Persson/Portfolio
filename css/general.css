@@ -157,7 +157,7 @@ header nav a {
     transform: rotate(-45deg) translate(5px, -5px);
     transition: 0.2s linear;
   }
-  nav.active .navli {
+  .navtop.active .navli {
     display: block;
     background-color: var(--color-bg);
     position: absolute;
@@ -170,11 +170,11 @@ header nav a {
   header > nav li > a:after {
     content: "";
   }
-  nav.active .navli li {
+  .navtop.active .navli li {
     margin: 40px 20px;
     text-align: right;
   }
-  nav.active .navli a {
+  .navtop.active .navli a {
     font-size: 24px;
   }
   .burger {
@@ -198,10 +198,7 @@ header nav a {
     padding-bottom: 8rem;
     padding-top: 2em;
   }
-  /* .billede3 {
-    rotate: 90deg;
-    position: static;
-    } */
+
   .grid_1-1-mobil img {
     width: 100%;
     max-width: 160px;
@@ -429,4 +426,11 @@ nav {
 #popup4 a:hover,
 #popup5 a:hover {
   filter: drop-shadow(0 0 0.75rem var(--color-gul));
+}
+.Margin {
+  margin-top: -1em;
+}
+.Portræt {
+  justify-self: center;
+  margin-top: 4em;
 }
